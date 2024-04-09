@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Trinity Klein" description="About Trinity Klein Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background.">
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Trinity Klein at work with a colleague"
+				/>
+			</Hero>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Bachelor of Computer Information Systems, College of Engineering</p>
+					<p>Univiersity of Houston  | Aug 2020 - Dec 2025</p>
+					<p> GPA: 3.48</p>
+					<p>Relevant Coursework</p>
+					<ul>CIS 3365: Built a customer-facing application for catering event management in MySQL and Amazon AWS. </ul>
+					<ul>CIS 3368: Programmed UI for REST API Services using Node.JS, Amazon AWS, and Postman. </ul>
+					<ul>CIS 3343: Created and repaired documentation and deliverables for a catering event management system with stakeholder requirements.</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Work</h2>
+				<div class="content">
+					<p>Information Technology Specialist</p>
+					<p>Southeast Hypnosis  | May 2020 - Present</p>
+					<ul>Designed advertisements in Adobe Photoshop and Adobe Express for magazines, Google Ads, and newspapers.</ul>
+					<ul>Directed videos in Adobe Premier Pro for clients for YouTube, social media, and television.</ul>
+					<ul>Computed financial reports in Microsoft Excel and Microsoft Word each month.</ul>
+					<ul>Optimized website using HTML, Google HTML, Google Analytics, Google Tags, Facebook Pixel IDs, and SEO to enhance brand visibility.</ul>
+					<ul>Maintained a local cloud servers using QNAP to effectively allocate marking and client documentation.</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Activities & Extracurriculars </h2>
+				<div class="content">
+					<div class="content">
+						<p>Ambassador</p>
+						<p>Southeast Hypnosis  | November 2021 - April 2024</p>
+						<ul>Analyzed reports in Microsoft Excel and Microsoft Word to conduct demographic and data analysis to identify optimal 
+							consumer markets and improve email marketing campaigns with 17,000 subscribers (about the seating capacity of Madison Square Garden).</ul>
+						<ul>Collaborate in coordinating events for at least 1,000 attendees with representatives from E1 Motorsports, 
+							MD Anderson Cancer Center, United States Army, United States Navy, and United States Marine Corps.</ul>
+						<ul>Developed effective advertisements and photographs using Adobe Photoshop and Adobe Lightroom to increase ticket sales.  </ul>
+					</div>
+				</div>
+				<div class="content">
+					<div class="content">
+						<p>Member</p>
+						<p>Future Information Technology Professionals  | August 2022 - Present</p>
+						<ul>Corresponded with high-level industry professionals from Exxon Mobil, Google, Amazon, and Capgemini. </ul>
+						<ul>Communicated in informational business meetings to improve knowledge and communication skills.  </ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills & Interests</h2>
+				<div class="content">
+					<p>Computer Skills</p>
+					<ul>Web Development</ul>
+					<ul>Cloud Computing</ul>
+					<ul>Oracle SQL Developer</ul>
+					<ul>MongoDB</ul>
+					<ul>MySQL</ul>
+					<p>Computer Languages</p>
+					<ul>Python</ul>
+					<ul>Java</ul>
+					<ul>JavaScript</ul>
+					<ul>HTML</ul>
+					<ul>CSS</ul>
+					<ul>SQL</ul>
+					<ul>NodeJS</ul>
+					<ul>ReactJS</ul>
+					<ul>VueJS</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
